@@ -10,16 +10,19 @@
     </div>
 
     <div class="row">
-        <div class="col-3">
+        <div class="col-4">
             <img [src]="pais.flag" [alt]="pais.name" class="img-thumbnail">
         </div>
         <div class="col">
             <ul class="list-group">
                 <li class="list-group-item">
+                    <strong>Capital: </strong> {{ pais.capital }}
+                </li>
+                <li class="list-group-item">
                     <strong>Población: </strong> {{ pais.population | number }}
                 </li>
                 <li class="list-group-item">
-                    <strong>Código numérico: </strong> {{ pais.numericCode }}
+                    <strong>Código numérico: </strong> {{ pais.numericCode | number }}
                 </li>
                 <li class="list-group-item">
                     <strong>Código alpha3: </strong> {{ pais.alpha3Code }}
