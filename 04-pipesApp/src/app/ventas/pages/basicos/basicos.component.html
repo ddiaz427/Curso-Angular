@@ -1,0 +1,86 @@
+<div class="text-layout">
+    <h1>Pipes báscicos</h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente estan incluidos en CommonModule
+    </p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-4">
+        <p-card header="uppercase" [subheader]="nombreLower | uppercase">
+            {{ nombreLower }}
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="lowercase" [subheader]="nombreLower | lowercase">
+            {{ nombreLower }}
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="titlecase" [subheader]="nombreCompleto | titlecase">
+            {{ nombreCompleto }}
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h1>Date | Fecha | Pipe</h1>
+    <p>
+        Pipe para mostrar fechas
+    </p>
+</div>
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li> fecha </li>
+                <li> fecha  | date </li>
+                <li> fecha | date:'short' </li>
+                <li> fecha | date:'long' </li>
+                <li> fecha | date:'dd/MM/YYYY HH:mm:ss' </li>
+                <li> fecha | date:'custom' </li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>fecha | date:'long':'GMT-6'</li>
+                <li>fecha | date:'long':'GMT'</li>
+                <li>fecha | date:'long':'':'ja'</li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li>{{ fecha }}</li>
+                <li>{{ fecha | date }}</li>
+                <li>{{ fecha | date:'short' }}</li>
+                <li>{{ fecha | date:'long' }}</li>
+                <li>{{ fecha | date:'dd/MM/YYYY HH:mm:ss' }}</li>
+                <li>
+                    {{ fecha | date:'dd' }}
+                    de 
+                    {{ fecha | date:'MMMM' }} 
+                    de 
+                    {{ fecha | date:'YYYY' }} 
+                    a las 
+                    {{ fecha | date:'HH' }} 
+                    Hrs 
+                    {{ fecha | date:'mm' }} 
+                    Minutos 
+                    {{ fecha | date:'ss' }} 
+                    Segundos
+                </li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>{{ fecha | date:'long':'GMT-6':'es-CO' }}</li>
+                <li>{{ fecha | date:'long':'GMT' }}</li>
+                <li>{{ fecha | date:'long':'':'ja' }}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>
