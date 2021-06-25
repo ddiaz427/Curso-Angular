@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Color, Heroe } from '../../interfaces/ventas.interface';
 
 @Component({
   selector: 'app-ordenar',
@@ -6,11 +7,50 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class OrdenarComponent implements OnInit {
+export class OrdenarComponent {
 
-  constructor() { }
+  enMayusculas: boolean = true;
+  ordernarPor: string = '';
 
-  ngOnInit(): void {
+  toogleMayusculas(){
+    if(this.enMayusculas){
+      this.enMayusculas = false;
+    }
+    else{
+      this.enMayusculas = true;
+    }
+  }
+
+  heroes: Heroe[] = [
+    {
+      nombre: 'Superman',
+      vuela: true,
+      color: Color.azul
+    },
+    {
+      nombre: 'Batman',
+      vuela: false,
+      color: Color.negro
+    },
+    {
+      nombre: 'Wonder Woman',
+      vuela: true,
+      color: Color.azul
+    },
+    {
+      nombre: 'Flash',
+      vuela: false,
+      color: Color.rojo
+    },
+    {
+      nombre: 'Green Arrow',
+      vuela: false,
+      color: Color.verde
+    }
+  ];
+
+  cambiarOrden(valor: string){
+    this.ordernarPor = valor;
   }
 
 }
